@@ -1,27 +1,36 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Bai66 {
-
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
-        int num;
-        System.out.println("Nhap kich thuoc mang: ");
-        num = myObj.nextInt();
-        int nums[] = new int[num];
-        System.out.println("Nhap cac phan tu mang: ");
-        int sum = 0;
-        for (int i = 0; i < num; ++i){
-            nums[i] = myObj.nextInt();
-            sum += nums[i]; 
+        Scanner input = new Scanner(System.in);
+        int row, col;
+        System.out.println("Input size of Matrix: ");
+        row = input.nextInt();
+        col = input.nextInt();
+        int ma1[][] = new int[row][col];
+        int ma2[][] = new int[row][col];
+        int sumMatrix[][] = new int[row][col];
+        System.out.println("Input Matrix1: ");
+        for (int i = 0; i < row; ++i){
+            for (int j = 0; j < col; ++j){
+                ma1[i][j] = input.nextInt();
+                sumMatrix[i][j] += ma1[i][j];
+            }
         }
-        System.out.println("Chuoi sau khi sap xep: ");
-        Arrays.sort(nums);
-        for (int a : nums){
-            System.out.print(a);
+        System.out.println("Input Matrix2: ");
+        for (int i = 0; i < row; ++i){
+            for (int j = 0; j < col; ++j){
+                ma2[i][j] = input.nextInt();
+                sumMatrix[i][j] += ma2[i][j];
+            }
         }
-        System.out.println("\nTong chuoi la: " + sum);
-        System.out.println("Trung binh day la: " + sum/num);
-        myObj.close();
-    } 
+        System.out.println("Sum of two matrix: ");
+        for (int i = 0; i < row; ++i){
+            for (int j = 0; j < col; ++j){
+                System.out.print(sumMatrix[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        input.close();
+    }
 }
