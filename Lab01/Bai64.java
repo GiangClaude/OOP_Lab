@@ -104,35 +104,35 @@ public class Bai64 {
                 case "aug.":
                 case "aug":
                 case "8":
-                    monthInput = "1";
+                    monthInput = "8";
                     isRightInput = 1;
                     break;
                 case "september":
                 case "sep.":
                 case "sep":
                 case "9":
-                    monthInput = "1";   
+                    monthInput = "9";   
                     isRightInput = 1;
                     break;
                 case "october":
                 case "oct.":
                 case "oct":
                 case "10":
-                    monthInput = "1";
+                    monthInput = "10";
                     isRightInput = 1;
                     break;
                 case "november":
                 case "nov.":
                 case "nov":
                 case "11":
-                    monthInput = "1";
+                    monthInput = "11";
                     isRightInput = 1;
                     break;
                 case "december":
                 case "dec.":
                 case "dec":
                 case "12":
-                    monthInput = "1";
+                    monthInput = "12";
                     isRightInput = 1;
                     break;
                 default:
