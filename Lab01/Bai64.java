@@ -1,12 +1,22 @@
+
+
 import java.util.HashMap;
+
 import javax.swing.JOptionPane;
 
 public class Bai64 {
     static int isLeap = 0;
     static int takeYear(){
+        String yearInput;
         int year;
         do {
-            year = Integer.parseInt(JOptionPane.showInputDialog("Input year: "));
+            try {
+                yearInput = JOptionPane.showInputDialog("Input year: ");
+                year = Integer.parseInt(yearInput);
+            } catch(Exception e){
+                year = -1;
+                JOptionPane.showMessageDialog(null, "Vui long nhap mot con so!");
+            }
         } while (year < 0);
         if (year % 4 == 0){
             if (year % 100 == 0 && year % 400 != 0) isLeap = 0;
@@ -48,69 +58,81 @@ public class Bai64 {
                 case "jan.":
                 case "jan":
                 case "1":
+                    monthInput = "1";
                     isRightInput = 1;
                     break;
                 case "february":
                 case "feb.":
                 case "feb":
                 case "2":
+                    monthInput = "2";
                     isRightInput = 1;
                     break;
                 case "march":
                 case "mar.":
                 case "mar":
                 case "3":
+                    monthInput = "3";
                     isRightInput = 1;
                     break;
                 case "april":
                 case "apr.":
                 case "apr":
                 case "4":
+                    monthInput = "4";
                     isRightInput = 1;
                     break;
                 case "may":
                 case "5":
+                    monthInput = "5";
                     isRightInput = 1;
                     break;
                 case "june":
                 case "jun":
                 case "6":
+                    monthInput = "6";
                     isRightInput = 1;
                     break;
                 case "july":
                 case "jul.":
                 case "jul":
                 case "7":
+                    monthInput = "7";
                     isRightInput = 1;
                     break;
                 case "august":
                 case "aug.":
                 case "aug":
                 case "8":
+                    monthInput = "1";
                     isRightInput = 1;
                     break;
                 case "september":
                 case "sep.":
                 case "sep":
                 case "9":
+                    monthInput = "1";   
                     isRightInput = 1;
                     break;
                 case "october":
                 case "oct.":
                 case "oct":
                 case "10":
+                    monthInput = "1";
                     isRightInput = 1;
                     break;
                 case "november":
                 case "nov.":
                 case "nov":
                 case "11":
+                    monthInput = "1";
                     isRightInput = 1;
                     break;
                 case "december":
                 case "dec.":
                 case "dec":
                 case "12":
+                    monthInput = "1";
                     isRightInput = 1;
                     break;
                 default:
