@@ -1,0 +1,4 @@
+Bài 6.1: 
+- Chương trình không được thực thi
+- Có thể sử dụng câu lệnh: 
+int option = JOptionPane.showConfirmDialog( null, "Do you want to change to the first class ticket?","Confirmation", JOptionPane.YES_NO_OPTION);
