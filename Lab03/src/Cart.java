@@ -30,7 +30,21 @@ public class Cart {
 		}
 	}
 	
-
+	void addDigitalVideoDisc1(DigitalVideoDisc... dvd) {
+		if (Count_Number == MAX_NUMBERS_ORDERED) {
+			System.out.println("The cart is almost full");
+		} else {
+			if (Count_Number + dvd.length > MAX_NUMBERS_ORDERED)
+				System.out.println("Too much to add to cart!");
+			else {
+				for (DigitalVideoDisc a:dvd) {
+					itemsOrdered.add(a);
+					Count_Number++;
+					System.out.println("The disc has been added!");
+				}
+			}
+		}
+	}
 	
 	void removeDigitalVideoDisc(int arg) {
 		itemsOrdered.remove(arg);
