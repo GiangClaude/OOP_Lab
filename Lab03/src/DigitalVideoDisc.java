@@ -1,12 +1,5 @@
 
 public class DigitalVideoDisc {
-	private static int nbDigitalVideoDisc;
-	
-	private void upNumber() {
-		nbDigitalVideoDisc++;
-	};
-	
-	private int id = nbDigitalVideoDisc;
 	private String title;
 	private String category;
 	private String director;
