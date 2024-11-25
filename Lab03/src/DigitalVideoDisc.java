@@ -1,5 +1,12 @@
 
 public class DigitalVideoDisc {
+	private static int nbDigitalVideoDisc;
+	
+	private void upNumber() {
+		nbDigitalVideoDisc++;
+	};
+	
+	private int id = nbDigitalVideoDisc;
 	private String title;
 	private String category;
 	private String director;
@@ -19,6 +26,9 @@ public class DigitalVideoDisc {
 	}
 	public void setCost(float cost) {
 		this.cost = cost;
+	}
+	public int getID() {
+		return id;
 	}
 	public String getTitle() {
 		return title;
