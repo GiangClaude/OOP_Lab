@@ -19,6 +19,8 @@ public class CartTest {
         // Test the print method
         cart.print();
 
+        cart.searchById(2);
+        cart.searchByTitle("Aladin");
 
         // To-do: Test the search methods here
     }
