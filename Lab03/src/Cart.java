@@ -67,14 +67,65 @@ public class Cart {
 		}
 		return total;
 	}
-	void seeInfo(int index) {
-		DigitalVideoDisc a = itemsOrdered.get(index);
-		System.out.println("DVD so: " + index);
-		System.out.println("Title: " + a.getTitle());
-		System.out.println("Category: " + a.getCategory());
-		System.out.println("Diretor: " + a.getDirector());
-		System.out.println("Length: " + a.getLength());
-		System.out.println("Cost: " + a.getCost());
-		System.out.println("-----------------------------");
+	void seeInfo(int id) {
+		for (DigitalVideoDisc a : itemsOrdered) {
+	           if (a.getID() == id) {
+	        	   System.out.println("DVD so: " + a.getID());
+	       		System.out.println("Title: " + a.getTitle());
+	       		System.out.println("Category: " + a.getCategory());
+	       		System.out.println("Diretor: " + a.getDirector());
+	       		System.out.println("Length: " + a.getLength());
+	       		System.out.println("Cost: " + a.getCost());	       				System.out.println("-----------------------------");
+	              
+	                break;
+	            }
+	        }
+		
 	}
+	void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items: ");
+		for (DigitalVideoDisc a: itemsOrdered) {
+			System.out.println(a.getID() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
+					+ " - " + a.getDirector() + " - " + a.getLength() + ": " + a.getCost() + "$"
+					);
+		}
+	}
+	
+	
+	
+	 public void searchById(int id) {
+	        boolean found = false;
+	        for (DigitalVideoDisc dvd : itemsOrdered) {
+		           if (dvd.getID() == id) {
+		                seeInfo(id);
+		                found = true;
+		                break;
+		            }
+		        }
+	 
+	        if (!found) {
+	            System.out.println("No DVD found with ID: " + id);
+	        }
+	    }
+	 
+
+	    // Search for DVD by Title
+	    public void searchByTitle(String title) {
+	    	  boolean found = false;
+
+		        for (DigitalVideoDisc dvd : itemsOrdered) {
+		            if (dvd.getTitle() == title) {
+		            	int id = dvd.getID();
+		                seeInfo(id);
+		                found = true;
+		                break;
+		            }
+		        }
+
+		        if (!found) {
+		            System.out.println("No DVD found with ID: " + title);
+		        }
+	    }
+	
 }

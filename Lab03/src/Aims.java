@@ -8,10 +8,10 @@ public class Aims {
 				"Animation", "Roger Allers", 87, 20f);
 		anOrder.addDigitalVideoDisc(dvd1);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc("The lion King", 
-				"Animation", "Roger Allers", 87, 20f);
+				"Animatiddsn", "Roger Allers", 87, 20f);
 		anOrder.addDigitalVideoDisc(dvd2);
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("The lion King", 
-				"Animation", "Roger Allers", 87, 20f);
+				"Animasd", "Roger Allers", 87, 20f);
 		anOrder.addDigitalVideoDisc(dvd3);
 		
 		System.out.println("Total cost is: " + anOrder.totalCost());
