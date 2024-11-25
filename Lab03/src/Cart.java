@@ -59,7 +59,7 @@ public class Cart {
 	}
 	void seeInfo(int index) {
 		DigitalVideoDisc a = itemsOrdered.get(index);
-		System.out.println("DVD so: " + index);
+		System.out.println("DVD so: " + a.getID());
 		System.out.println("Title: " + a.getTitle());
 		System.out.println("Category: " + a.getCategory());
 		System.out.println("Diretor: " + a.getDirector());
