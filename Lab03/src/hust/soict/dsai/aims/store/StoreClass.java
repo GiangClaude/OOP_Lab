@@ -1,13 +1,16 @@
+package hust.soict.dsai.aims.store;
 import java.util.ArrayList;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class StoreClass {
 	private ArrayList<DigitalVideoDisc> itemsStore = new ArrayList<>();
-	void addDVD(DigitalVideoDisc dvd) {
+	public void addDVD(DigitalVideoDisc dvd) {
 			itemsStore.add(dvd);
 			System.out.println("The disc has been added!");
 	}	
 	
-	void removeDVD(int id) {
+	public void removeDVD(int id) {
 		boolean found = false;
 		for (DigitalVideoDisc dvd: itemsStore) {
 			if (dvd.getID() == id) {
@@ -19,7 +22,7 @@ public class StoreClass {
 		if (found == false) System.out.println("There isnt any dvd have id " + id + " in store");
 	}
 	
-	void print() {
+	public void print() {
 		System.out.println("***********************CART***********************");
 		System.out.println("Store Items: ");
 		for (DigitalVideoDisc a: itemsStore) {
@@ -29,7 +32,7 @@ public class StoreClass {
 		}
 	}
 	
-	void removeDVD(DigitalVideoDisc dvd) {
+	public void removeDVD(DigitalVideoDisc dvd) {
 		itemsStore.remove(dvd);
 	}
 	

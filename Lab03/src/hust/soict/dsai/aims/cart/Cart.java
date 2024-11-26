@@ -1,10 +1,12 @@
+package hust.soict.dsai.aims.cart;
 import java.util.ArrayList;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	public int Count_Number;
 	private ArrayList<DigitalVideoDisc> itemsOrdered = new ArrayList<>();
 
-	void addDigitalVideoDisc(DigitalVideoDisc dvd) {
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd) {
 		if (Count_Number == MAX_NUMBERS_ORDERED) {
 			System.out.println("The cart is almost full");
 		} else {
@@ -15,7 +17,7 @@ public class Cart {
 	}	
 	
 	
-	void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
 		for (DigitalVideoDisc a:dvdList) {
 			if (Count_Number == MAX_NUMBERS_ORDERED) {
 				System.out.println("The cart is almost full");
@@ -27,7 +29,7 @@ public class Cart {
 		}
 	}
 	
-	void addDigitalVideoDisc1(DigitalVideoDisc... dvd) {
+	public void addDigitalVideoDisc1(DigitalVideoDisc... dvd) {
 		for (DigitalVideoDisc a:dvd) {
 			if (Count_Number == MAX_NUMBERS_ORDERED) {
 				System.out.println("The cart is almost full");
@@ -41,7 +43,7 @@ public class Cart {
 	}
 	
 	
-	void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
 		if (Count_Number == MAX_NUMBERS_ORDERED) {
 			System.out.println("The cart is almost full");
 		} else {
@@ -56,18 +58,18 @@ public class Cart {
 		}
 	}
 	
-	void removeDigitalVideoDisc(int arg) {
+	public void removeDigitalVideoDisc(int arg) {
 		itemsOrdered.remove(arg);
 		Count_Number--;
 	}
-	float totalCost() {
+	public float totalCost() {
 		float total = 0;
 		for (DigitalVideoDisc a : itemsOrdered) {
 			total += a.getCost();
 		}
 		return total;
 	}
-	void seeInfo(int id) {
+	public void seeInfo(int id) {
 		for (DigitalVideoDisc a : itemsOrdered) {
 	           if (a.getID() == id) {
 	        	   System.out.println("DVD so: " + a.getID());
@@ -82,7 +84,7 @@ public class Cart {
 	        }
 		
 	}
-	void print() {
+	public void print() {
 		System.out.println("***********************CART***********************");
 		System.out.println("Ordered Items: ");
 		for (DigitalVideoDisc a: itemsOrdered) {
@@ -93,7 +95,7 @@ public class Cart {
 	}
 	
 
-	 public void searchById(int id) {
+	public void searchById(int id) {
 	        boolean found = false;
 	        for (DigitalVideoDisc dvd : itemsOrdered) {
 		           if (dvd.getID() == id) {
