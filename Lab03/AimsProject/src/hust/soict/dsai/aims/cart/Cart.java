@@ -101,7 +101,7 @@ public class Cart {
 	        boolean found = false;
 	        for (DigitalVideoDisc dvd : itemsOrdered) {
 		           if (dvd.getID() == id) {
-		                seeInfo(id);
+		        	   System.out.println(dvd.toString());
 		                found = true;
 		                break;
 		            }
@@ -118,9 +118,8 @@ public class Cart {
 	    	  boolean found = false;
 
 		        for (DigitalVideoDisc dvd : itemsOrdered) {
-		            if (dvd.getTitle() == title) {
-		            	int id = dvd.getID();
-		                seeInfo(id);
+		            if (dvd.isMatch(title)) {
+		                System.out.println(dvd.toString());
 		                found = true;
 		                break;
 		            }
