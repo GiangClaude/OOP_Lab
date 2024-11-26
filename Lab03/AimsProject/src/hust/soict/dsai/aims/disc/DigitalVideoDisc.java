@@ -77,4 +77,16 @@ public class DigitalVideoDisc {
 	}
 	
 	
+	public String toString() {
+		return "DVD: " + this.title + 
+				" - Category: " + this.category + 
+				" - Director: " + this.director + 
+				" - DVD length: " + this.length + 
+				" - Cost: " + this.cost + "$";
+	}
+	
+	public boolean isMatch(String title) {
+		return this.title.toLowerCase().contains(title.toLowerCase());
+	}
+	
 }
