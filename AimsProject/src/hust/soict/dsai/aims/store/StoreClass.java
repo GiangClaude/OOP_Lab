@@ -14,7 +14,7 @@ public class StoreClass {
 	public void removeDVD(int id) {
 		boolean found = false;
 		for (DigitalVideoDisc dvd: itemsStore) {
-			if (dvd.getID() == id) {
+			if (dvd.getId() == id) {
 				itemsStore.remove(dvd);
 				found = true;
 				break;
@@ -27,7 +27,7 @@ public class StoreClass {
 		System.out.println("***********************CART***********************");
 		System.out.println("Store Items: ");
 		for (DigitalVideoDisc a: itemsStore) {
-			System.out.println(a.getID() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
+			System.out.println(a.getId() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
 					+ " - " + a.getDirector() + " - " + a.getLength() + ": " + a.getCost() + "$"
 					);
 		}

@@ -73,8 +73,8 @@ public class Cart {
 	}
 	public void seeInfo(int id) {
 		for (DigitalVideoDisc a : itemsOrdered) {
-	           if (a.getID() == id) {
-	        	   System.out.println("DVD so: " + a.getID());
+	           if (a.getId() == id) {
+	        	   System.out.println("DVD so: " + a.getId());
 	       		System.out.println("Title: " + a.getTitle());
 	       		System.out.println("Category: " + a.getCategory());
 	       		System.out.println("Diretor: " + a.getDirector());
@@ -90,7 +90,7 @@ public class Cart {
 		System.out.println("***********************CART***********************");
 		System.out.println("Ordered Items: ");
 		for (DigitalVideoDisc a: itemsOrdered) {
-			System.out.println(a.getID() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
+			System.out.println(a.getId() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
 					+ " - " + a.getDirector() + " - " + a.getLength() + ": " + a.getCost() + "$"
 					);
 		}
@@ -100,7 +100,7 @@ public class Cart {
 	public void searchById(int id) {
 	        boolean found = false;
 	        for (DigitalVideoDisc dvd : itemsOrdered) {
-		           if (dvd.getID() == id) {
+		           if (dvd.getId() == id) {
 		        	   System.out.println(dvd.toString());
 		                found = true;
 		                break;
