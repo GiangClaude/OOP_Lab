@@ -20,48 +20,48 @@ public class DigitalVideoDisc extends Media {
 	public DigitalVideoDisc(String title, String category, String director, float cost) {
 		super();
 		nbDigitalVideoDisc++;
-		this.id = nbDigitalVideoDisc;
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.cost = cost;
+		this.setId(nbDigitalVideoDisc);
+		this.setTitle(title);
+		this.setCategory(category);
+		this.setDirector(director);
+		this.setCost(cost); 
 	}
 	public DigitalVideoDisc(String title, String category, float cost) {
 		super();
 		nbDigitalVideoDisc++;
-		this.id = nbDigitalVideoDisc;
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
+		this.setId(nbDigitalVideoDisc);
+		this.setTitle(title);
+		this.setCategory(category);
+		this.setCost(cost); 
 	}
 	public DigitalVideoDisc(String title) {
 		super();
 		nbDigitalVideoDisc++;
-		this.id = nbDigitalVideoDisc;
-		this.title = title;
+		this.setId(nbDigitalVideoDisc);
+		this.setTitle(title);
 	}
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
 		super();
 		nbDigitalVideoDisc++;
-		this.id = nbDigitalVideoDisc;
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.length = length;
-		this.cost = cost;
+		this.setId(nbDigitalVideoDisc);
+		this.setTitle(title);
+		this.setCategory(category);
+		this.setDirector(director);
+		this.setCost(cost); 
+		this.setLength(length); 
 	}
 	
 	
 	public String toString() {
-		return "DVD: " + this.title + 
-				" - Category: " + this.category + 
-				" - Director: " + this.director + 
-				" - DVD length: " + this.length + 
-				" - Cost: " + this.cost + "$";
+		return "DVD: " + this.getTitle() + 
+				" - Category: " + this.getCategory() + 
+				" - Director: " + this.getDirector() + 
+				" - DVD length: " + this.getLength() + 
+				" - Cost: " + this.getCost() + "$";
 	}
 	
 	public boolean isMatch(String title) {
-		return this.title.toLowerCase().contains(title.toLowerCase());
+		return this.getTitle().toLowerCase().contains(title.toLowerCase());
 	}
 	
 }
