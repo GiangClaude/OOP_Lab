@@ -46,9 +46,7 @@ public class Cart {
 		System.out.println("***********************CART***********************");
 		System.out.println("Ordered Items: ");
 		for (Media a: itemsOrdered) {
-			System.out.println(a.getId() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
-					+ ": " + a.getCost() + "$"
-					);
+			System.out.println(a.toString());
 		}
 	}
 	
