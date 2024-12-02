@@ -5,12 +5,12 @@ import hust.soict.dsai.aims.media.Media;
 
 public class StoreClass {
 	private ArrayList<Media> itemsStore = new ArrayList<>();
-	public void addDVD(Media dvd) {
+	public void addMedia(Media dvd) {
 			itemsStore.add(dvd);
 			System.out.println("The media has been added!");
 	}	
 	
-	public void removeDigitalVideoDisc(Media m) {
+	public void removeMedia(Media m) {
 		if (!itemsStore.contains(m)) {
 			itemsStore.remove(m);
 		}
