@@ -55,6 +55,14 @@ public abstract class Media{
 		return this.getTitle().toLowerCase().contains(title.toLowerCase());
 	}
 	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Media m = (Media) obj;
+        return title.equals(m.title);
+    }
+	
 	public String toString() {
 		return "0";
 	};
