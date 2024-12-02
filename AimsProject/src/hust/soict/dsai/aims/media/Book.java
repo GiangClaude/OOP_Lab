@@ -10,10 +10,10 @@ public class Book extends Media {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public List<String> getAuthors() {
 		return authors;
 	}
+	
 	public void setAuthors(List<String> authors) {
 		this.authors = authors;
 	}
