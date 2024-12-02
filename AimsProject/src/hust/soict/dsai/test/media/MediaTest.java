@@ -18,6 +18,7 @@ public class MediaTest {
 		bk1.addAuthor("Hi");
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("Hi", "humor", "Alex", 25);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc("Hi", "do", "Al", 25);
+		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Hi", "humor", "Alex", 25);
 		CompactDisc cd1 = new CompactDisc();
 		cd1.addTrack(t1);
 		cd1.addTrack(t2);

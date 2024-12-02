@@ -24,9 +24,12 @@ public class Cart {
 		if (Count_Number == MAX_NUMBERS_ORDERED) {
 			System.out.println("The cart is almost full");
 		} else {
-			itemsOrdered.add(mda);
-			Count_Number++;
-			System.out.println("The disc has been added!");
+			if (!itemsOrdered.contains(mda)) {
+				itemsOrdered.add(mda);
+				Count_Number++;
+				System.out.println("The disc has been added!");
+			}
+			else System.out.println("The title has already exist!");
 		}
 	}	
 	

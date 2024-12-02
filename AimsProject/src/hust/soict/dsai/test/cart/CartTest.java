@@ -19,7 +19,6 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", 
                                                      "Animation", 18.99f);
         cart.addMedia(dvd3);
-
         // Test the print method
         cart.print();
 
