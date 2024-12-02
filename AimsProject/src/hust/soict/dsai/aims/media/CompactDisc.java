@@ -5,11 +5,9 @@ import java.util.ArrayList;
 public class CompactDisc extends Disc implements Playable{
 
 	private String artist;
-	private ArrayList<Track> tracks;
+	private ArrayList<Track> tracks = new ArrayList<Track>();
 	
-
 	public CompactDisc() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public CompactDisc(String artist, ArrayList<Track> tracks) {
@@ -22,6 +20,7 @@ public class CompactDisc extends Disc implements Playable{
 		return artist;
 	}
 	
+	
 	public int getLength() {
 		int length = 0;
 		for (Track a : tracks) {
@@ -31,7 +30,7 @@ public class CompactDisc extends Disc implements Playable{
 	}
 	
 	public void addTrack(Track trackName) {
-		if ( tracks.contains(trackName)) {
+		if (!tracks.contains(trackName)) {
 			tracks.add(trackName);
 			System.out.println("Add new track successfully!");
 		}
@@ -40,7 +39,7 @@ public class CompactDisc extends Disc implements Playable{
 	}
 	
 	public void removeTrack(Track trackName) {
-		if ( tracks.contains(trackName)) {
+		if (!tracks.contains(trackName)) {
 			tracks.remove(trackName);
 		}
 		else System.out.println("The track is not exist!");
@@ -59,7 +58,7 @@ public class CompactDisc extends Disc implements Playable{
 				" - Artist: " + this.getArtist() +
 				" - Category: " + this.getCategory() + " - Tracks: ";
 		for (Track track: this.tracks) {
-			returnString += track + ", ";
+			returnString += track.getTitle() + "(" + track.getLength() + ") ";
 		}
 		returnString += " - Cost: " + this.getCost() + "$";
 		return returnString;
