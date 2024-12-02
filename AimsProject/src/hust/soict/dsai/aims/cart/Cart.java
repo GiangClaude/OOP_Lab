@@ -77,20 +77,21 @@ public class Cart {
 	 
 
 	    // Search for DVD by Title
-	    public void searchByTitle(String title) {
+	    public Media searchByTitle(String title) {
 	    	  boolean found = false;
 
 		        for (Media dvd : itemsOrdered) {
 		            if (dvd.isMatch(title)) {
 		                System.out.println(dvd.toString());
 		                found = true;
-		                break;
+		                return dvd;
 		            }
 		        }
-
+		
 		        if (!found) {
 		            System.out.println("No media found with title: " + title);
 		        }
+				return null;
 	    }
 	    
 	    public void sortByTitle() {
@@ -101,6 +102,10 @@ public class Cart {
 	    public void sortByCost() {
 	    	Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
 	    	this.print();
+	    }
+	    
+	    public void clearCart() {
+	    	itemsOrdered.clear();
 	    }
 	
 }

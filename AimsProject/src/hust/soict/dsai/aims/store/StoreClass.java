@@ -26,4 +26,55 @@ public class StoreClass {
 		}
 	}
 	
+	public void searchById(int id) {
+        boolean found = false;
+        for (Media dvd : itemsStore) {
+	           if (dvd.getId() == id) {
+	        	   System.out.println(dvd.toString());
+	                found = true;
+	                break;
+	            }
+	        }
+ 
+        if (!found) {
+            System.out.println("No media found with ID: " + id);
+        }
+    }
+ 
+
+    // Search for DVD by Title
+//    public boolean searchByTitle(String title) {
+//    	  boolean found = false;
+//
+//	        for (Media dvd : itemsStore) {
+//	            if (dvd.isMatch(title)) {
+//	                System.out.println(dvd.toString());
+//	                found = true;
+//	                break;
+//	            }
+//	        }
+//
+//	        if (!found) {
+//	            System.out.println("No media found with title: " + title);
+//	        }
+//			return found;
+//    }
+    
+    public Media searchByTitle(String title) {
+  	  boolean found = false;
+
+	        for (Media dvd : itemsStore) {
+	            if (dvd.isMatch(title)) {
+	                System.out.println(dvd.toString());
+	                found = true;
+	                return dvd;
+	            }
+	        }
+
+	        if (!found) {
+	            System.out.println("No media found with title: " + title);
+	        }
+	        return null;
+  }
+	
 }
