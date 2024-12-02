@@ -63,6 +63,11 @@ public abstract class Media{
         return title.equals(m.title);
     }
 	
+	@Override
+    public int hashCode() {
+        return title.hashCode();
+    }
+	
 	public String toString() {
 		return "0";
 	};
