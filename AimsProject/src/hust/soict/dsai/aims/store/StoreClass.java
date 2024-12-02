@@ -3,38 +3,29 @@ package hust.soict.dsai.aims.store;
 import java.util.ArrayList;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 public class StoreClass {
-	private ArrayList<DigitalVideoDisc> itemsStore = new ArrayList<>();
-	public void addDVD(DigitalVideoDisc dvd) {
+	private ArrayList<Media> itemsStore = new ArrayList<>();
+	public void addDVD(Media dvd) {
 			itemsStore.add(dvd);
-			System.out.println("The disc has been added!");
+			System.out.println("The media has been added!");
 	}	
 	
-	public void removeDVD(int id) {
-		boolean found = false;
-		for (DigitalVideoDisc dvd: itemsStore) {
-			if (dvd.getId() == id) {
-				itemsStore.remove(dvd);
-				found = true;
-				break;
-			}
+	public void removeDigitalVideoDisc(Media m) {
+		if (!itemsStore.contains(m)) {
+			itemsStore.remove(m);
 		}
-		if (found == false) System.out.println("There isnt any dvd have id " + id + " in store");
+		else System.out.println("Media is not exist!");
 	}
 	
 	public void print() {
 		System.out.println("***********************CART***********************");
 		System.out.println("Store Items: ");
-		for (DigitalVideoDisc a: itemsStore) {
-			System.out.println(a.getId() + ". DVD - " + a.getTitle() + " - " + a.getCategory() 
-					+ " - " + a.getDirector() + " - " + a.getLength() + ": " + a.getCost() + "$"
-					);
+		for (Media a: itemsStore) {
+			a.toString();
+			System.out.println("\n");
 		}
-	}
-	
-	public void removeDVD(DigitalVideoDisc dvd) {
-		itemsStore.remove(dvd);
 	}
 	
 }
