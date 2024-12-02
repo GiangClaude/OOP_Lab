@@ -1,0 +1,11 @@
+12
+- Class Media
+- For Sort by title: first compare title, if title equals then compare cost. For Sort by cost: first compare cost, if cost equals then compare title.
+- No, the Comparable interface only supports one natural ordering; you would need Comparator for multiple rules.
+- Use polymorphism by overriding the compareTo() method specifically for the DVD subclass to implement the new rule.
+11.
+The toString() method executed corresponds to the runtime type of each object, so the overridden version in CD, DVD, or Book is called.
+This happens because of polymorphism, where the method executed is determined by the runtime type of the object, not the compile-time type.
+
+10.
+The equals() method should return false if the object is not an instance of Media.

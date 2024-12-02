@@ -2,8 +2,7 @@ package hust.soict.dsai.aims.media;
 
 import java.util.Comparator;
 
-
-public abstract class Media{
+public class Media{
 	
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle(); 
@@ -13,6 +12,10 @@ public abstract class Media{
 	private String category;
 	private float cost;
 	
+	public Media() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Media(int id, String title, String category, float cost) {
 		super();
 		this.id = id;
@@ -21,10 +24,7 @@ public abstract class Media{
 		this.cost = cost;
 	}
 
-	public Media() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public int getId() {
 		return id;
 	}
@@ -65,13 +65,21 @@ public abstract class Media{
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Media m = (Media) obj;
-        return title.equals(m.title);
+        Media media = (Media) obj;
+        return title.equals(media.title);
+    }
+	
+	@Override
+    public int hashCode() {
+        return title.hashCode();
     }
 	
 	public String toString() {
 		return "0";
 	};
 	
+	public void play() {
+		
+	}
 	
 }

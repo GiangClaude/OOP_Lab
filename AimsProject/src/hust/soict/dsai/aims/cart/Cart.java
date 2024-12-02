@@ -24,9 +24,12 @@ public class Cart {
 		if (Count_Number == MAX_NUMBERS_ORDERED) {
 			System.out.println("The cart is almost full");
 		} else {
-			itemsOrdered.add(mda);
-			Count_Number++;
-			System.out.println("The disc has been added!");
+			if (!itemsOrdered.contains(mda)) {
+				itemsOrdered.add(mda);
+				Count_Number++;
+				System.out.println("The disc has been added!");
+			}
+			else System.out.println("The title has already exist!");
 		}
 	}	
 	
@@ -74,20 +77,21 @@ public class Cart {
 	 
 
 	    // Search for DVD by Title
-	    public void searchByTitle(String title) {
+	    public Media searchByTitle(String title) {
 	    	  boolean found = false;
 
 		        for (Media dvd : itemsOrdered) {
 		            if (dvd.isMatch(title)) {
 		                System.out.println(dvd.toString());
 		                found = true;
-		                break;
+		                return dvd;
 		            }
 		        }
-
+		
 		        if (!found) {
 		            System.out.println("No media found with title: " + title);
 		        }
+				return null;
 	    }
 	    
 	    public void sortByTitle() {
@@ -98,6 +102,10 @@ public class Cart {
 	    public void sortByCost() {
 	    	Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
 	    	this.print();
+	    }
+	    
+	    public void clearCart() {
+	    	itemsOrdered.clear();
 	    }
 	
 }
