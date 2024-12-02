@@ -1,7 +1,13 @@
 package hust.soict.dsai.aims.cart;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import hust.soict.dsai.aims.media.Media;
+
+
+
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	public int Count_Number;
@@ -83,6 +89,15 @@ public class Cart {
 		            System.out.println("No media found with title: " + title);
 		        }
 	    }
-	
+	    
+	    public void sortByTitle() {
+	    	Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+	    	this.print();
+	    }
+	    
+	    public void sortByCost() {
+	    	Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+	    	this.print();
+	    }
 	
 }
