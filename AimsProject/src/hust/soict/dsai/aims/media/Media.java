@@ -7,6 +7,14 @@ public abstract class Media{
 	private String category;
 	private float cost;
 	
+	public Media(int id, String title, String category, float cost) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.category = category;
+		this.cost = cost;
+	}
+
 	public Media() {
 		// TODO Auto-generated constructor stub
 	}
