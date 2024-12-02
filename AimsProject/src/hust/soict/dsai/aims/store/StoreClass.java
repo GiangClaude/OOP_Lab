@@ -1,8 +1,6 @@
 package hust.soict.dsai.aims.store;
 
 import java.util.ArrayList;
-
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 
 public class StoreClass {
