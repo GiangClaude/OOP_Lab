@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims.media;
 
-public abstract class Media {
+public abstract class Media{
 	
 	private int id;
 	private String title;
