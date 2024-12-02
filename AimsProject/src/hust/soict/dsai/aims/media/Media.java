@@ -6,7 +6,7 @@ public abstract class Media{
 	private String title;
 	private String category;
 	private float cost;
-
+	
 	public Media() {
 		// TODO Auto-generated constructor stub
 	}
