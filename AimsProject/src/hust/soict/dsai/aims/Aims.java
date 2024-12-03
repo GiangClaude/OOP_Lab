@@ -2,9 +2,7 @@ package hust.soict.dsai.aims;
 import java.util.Scanner;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.Book;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
-import hust.soict.dsai.aims.media.Media;
+import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.StoreClass;
 
 public class Aims {
@@ -22,20 +20,17 @@ public class Aims {
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The lion King", 
 				"Animation", "Roger Allers", 87, 20f);
 		anOrder.addMedia(dvd1);
+		itemStore.addMedia(dvd1);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc("The lion", 
 				"Animatiddsn", "Roger Allers", 87, 20f);
 		anOrder.addMedia(dvd2);
+		itemStore.addMedia(dvd2);
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("The King", 
 				"Animasd", "Roger Allers", 87, 20f);
 		anOrder.addMedia(dvd3);
-		
-		System.out.println("Total cost is: " + anOrder.totalCost());
-		//Remove by number in Order list
-		System.out.println("Total cost is: " + anOrder.totalCost());
-		//See infor DigitalVideoDisc by Orderlist
-		anOrder.seeInfo(1);
+		itemStore.addMedia(dvd3);
 		showMenu();
-		System.out.println("Thank you so much!");
+		System.out.println("Have a good day! Thank you so much!");
 		return;
 	}
 	
@@ -48,7 +43,7 @@ public class Aims {
 		System.out.println("0. Exit");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2-3");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		switch(num) {
 				case 1: storeMenu();
 						break;
@@ -78,7 +73,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2-3-4-5");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		switch(num) {
 				case 1: FilterCart();
 						break;
@@ -89,7 +84,7 @@ public class Aims {
 					str = in.nextLine();
 					o1 = anOrder.searchByTitle(str);
 					if (o1 != null) {
-						itemStore.removeMedia(o1);
+						anOrder.removeMedia(o1);
 					}	
 					else {
 						System.out.println("The title is not exist, plese choose another");
@@ -99,10 +94,10 @@ public class Aims {
 				case 4:
 					System.out.println("Plese enter the title: ");
 					str = in.nextLine();
-					o1 = itemStore.searchByTitle(str);
+					o1 = anOrder.searchByTitle(str);
 					if (o1 != null) {
 						if (o1.getClass() == Book.class) System.out.println("This media is Book, can not play!");
-						else o1.play();;
+						else o1.play();
 					}	
 					else {
 						System.out.println("The title is not exist, plese choose another");
@@ -123,7 +118,7 @@ public class Aims {
 	
 	public static void SortCart() {
 		System.out.println("Enter 1 or 2 to Sort by Cost or Title");
-		int choose = in.nextInt();
+		int choose = Integer.parseInt(in.nextLine());;
 		if (choose == 1) {
 			anOrder.sortByCost();
 		}
@@ -135,10 +130,10 @@ public class Aims {
 	
 	public static void FilterCart() {
 		System.out.println("Enter 1 or 2 to Filter by ID or Title");
-		int choose = in.nextInt();
+		int choose = Integer.parseInt(in.nextLine());;
 		if (choose == 1) {
 			System.out.println("Plese enter the id: ");
-			num = in.nextInt();
+			num = Integer.parseInt(in.nextLine());
 			anOrder.searchById(num);
 		}
 		else if (choose == 2) {
@@ -157,7 +152,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		switch(num) {
 				case 1:	
 					System.out.println("Plese enter the title: ");
@@ -201,7 +196,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2-3-4");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		
 		switch(num) {
 				case 1: 
@@ -264,7 +259,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		if (num == 1) anOrder.addMedia(o1);
 		else if (num == 2) o1.play();
 		else if (num == 0) storeMenu();
@@ -281,7 +276,7 @@ public class Aims {
 		System.out.println("0. Back");
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2");
-		num = in.nextInt();
+		num = Integer.parseInt(in.nextLine());
 		if (num == 1) anOrder.addMedia(o1);
 		else if (num == 0) storeMenu();
 		else {
