@@ -1,20 +1,22 @@
 package hust.soict.dsai.aims;
 import java.util.Scanner;
 
+import javax.naming.LimitExceededException;
+
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.media.*;
-import hust.soict.dsai.aims.store.StoreClass;
+import hust.soict.dsai.aims.store.Store;
 
 public class Aims {
 	
 	static int num;
 	static String str;
-	static StoreClass itemStore = new StoreClass();
+	static Store itemStore = new Store();
 	static Cart anOrder = new Cart();
 	static Media o1 = new Media();
 	static Scanner in = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws LimitExceededException {
 		
 		// TODO Auto-generated method stub
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The lion King", 

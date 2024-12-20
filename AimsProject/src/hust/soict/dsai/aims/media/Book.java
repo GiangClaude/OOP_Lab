@@ -11,8 +11,15 @@ public class Book extends Media {
 	}
 	
 	public Book(int id, String title, String category, float cost, List<String> authors) {
-		super(id, title, category, cost);
+		super(title, category, cost);
 		this.authors = authors;
+	}
+	
+	
+
+	public Book(String title, String category, float cost) {
+		super(title, category, cost);
+		// TODO Auto-generated constructor stub
 	}
 
 	public List<String> getAuthors() {

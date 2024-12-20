@@ -3,14 +3,19 @@ package hust.soict.dsai.aims.cart;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import javax.naming.LimitExceededException;
+
 import hust.soict.dsai.aims.media.Media;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	public int Count_Number;
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	public float totalCost() {
 		float total = 0;
 		for (Media a : itemsOrdered) {
@@ -19,19 +24,18 @@ public class Cart {
 		return total;
 	}
 	
-	public void addMedia(Media mda) {
-		if (Count_Number == MAX_NUMBERS_ORDERED) {
-			System.out.println("The cart is almost full");
-		} else {
-			if (!itemsOrdered.contains(mda)) {
-				itemsOrdered.add(mda);
-				Count_Number++;
-				System.out.println("The disc has been added!");
-			}
-			else System.out.println("The title has already exist!");
-		}
-	}	
-	
+	   // Add and remove media from cart
+    public String addMedia(Media media) throws LimitExceededException {
+        if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
+            throw new LimitExceededException("ERROR: The number of media has reached its limit");
+        } else if (itemsOrdered.contains(media)) {
+            return(media.getTitle() + " is already in the cart!");
+        } else {
+            Count_Number +=1;
+            itemsOrdered.add(media);
+            return (media.getTitle() + " has been added!");
+        }
+    }
 	public void removeMedia(Media m) {
 		if (!itemsOrdered.contains(m)) {
 			itemsOrdered.remove(m);
@@ -106,5 +110,19 @@ public class Cart {
 	    public void clearCart() {
 	    	itemsOrdered.clear();
 	    }
+
+		public ObservableList<Media> getItemsOrdered(){
+			return itemsOrdered;
+		}
+
+		public String placeOrder() {
+			if (itemsOrdered.size() == 0) {
+	            return "Your cart is empty!";
+	        } else {
+	        	Count_Number = 0;
+	            itemsOrdered.clear();
+	            return "Order created!\n" + "Now your cart will be empty!";
+	        }
+		}
 	
 }

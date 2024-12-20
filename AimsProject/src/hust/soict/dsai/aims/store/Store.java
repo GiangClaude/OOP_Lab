@@ -3,7 +3,7 @@ package hust.soict.dsai.aims.store;
 import java.util.ArrayList;
 import hust.soict.dsai.aims.media.Media;
 
-public class StoreClass {
+public class Store {
 	private ArrayList<Media> itemsStore = new ArrayList<>();
 	public void addMedia(Media dvd) {
 			itemsStore.add(dvd);
@@ -57,5 +57,10 @@ public class StoreClass {
 	        }
 	        return null;
   }
+
+	public ArrayList<Media> getItemsInStore() {
+		return itemsStore;
+		// TODO Auto-generated method stub
+	}
 	
 }
