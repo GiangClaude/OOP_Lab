@@ -17,6 +17,8 @@ public class DigitalVideoDisc extends Disc implements Playable{
 	public int getLength() {
 		return length;
 	}
+	
+	
 	public DigitalVideoDisc(String title, String category, String director, float cost) {
 		super();
 		
