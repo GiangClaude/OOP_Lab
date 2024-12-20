@@ -2,6 +2,8 @@ package hust.soict.dsai.aims.media;
 
 import java.util.Comparator;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 public class Media{
 	
 	public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
@@ -16,15 +18,20 @@ public class Media{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Media(int id, String title, String category, float cost) {
+	public Media(String title, String category, float cost) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
 	}
 
 	
+	public Media(String title2) {
+		super();
+		this.title = title2;
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -79,7 +86,10 @@ public class Media{
 	};
 	
 	public void play() {
-		
 	}
+
+    public String playGUI() throws PlayerException {
+        return "Playing media";
+    }
 	
 }
