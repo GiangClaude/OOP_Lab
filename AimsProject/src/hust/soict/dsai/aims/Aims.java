@@ -36,7 +36,7 @@ public class Aims {
 		return;
 	}
 	
-	public static void showMenu() {
+	public static void showMenu() throws LimitExceededException {
 		System.out.println("AIMS: ");
 		System.out.println("--------------------------------");
 		System.out.println("1. View store");
@@ -188,7 +188,7 @@ public class Aims {
 		updateStoreMenu();	
 	}
 	
-	public static void storeMenu() {
+	public static void storeMenu() throws LimitExceededException {
 		System.out.println("Options store: ");
 		System.out.println("--------------------------------");
 		System.out.println("1. See a media’s details");
@@ -253,7 +253,7 @@ public class Aims {
 		
 	}
 	
-	public static void mediaDetailsMenuforCDDVD(Media o1) {
+	public static void mediaDetailsMenuforCDDVD(Media o1) throws LimitExceededException {
 		System.out.println("Options MediaDetails: ");
 		System.out.println("--------------------------------");
 		System.out.println("1. Add to cart");
@@ -271,7 +271,7 @@ public class Aims {
 		}
 	}
 	
-	public static void mediaDetailsMenuforBook(Media o1) {
+	public static void mediaDetailsMenuforBook(Media o1) throws LimitExceededException {
 		System.out.println("Options MediaDetails: ");
 		System.out.println("--------------------------------");
 		System.out.println("1. Add to cart");
